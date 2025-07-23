@@ -1,11 +1,15 @@
 // db.js
+require('dotenv').config(); // Asegúrate de tener instalado el paquete dotenv
 const { Sequelize } = require('sequelize');
 
-// Cambia los datos a tu configuración local
-const sequelize = new Sequelize('tutor_visual', 'root', '1234', {
-  host: 'localhost',
-  dialect: 'mysql'
-});
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_DIALECT
+  }
+);
 
 sequelize.authenticate()
   .then(() => console.log('✅ Conectado a MySQL'))
