@@ -20,10 +20,3 @@ app.use(express.json());
 app.use('/api/usuario', require('./router/usuario'));
 app.use('/api/opiniones', require('./router/opiniones'));
 app.use('/api/recomendaciones', require('./router/recomendaciones'));
-
-// Iniciar servidor
-// En tu archivo principal (app.js o server.js)
-const PORT = 3001; // ✅ Cambiar a 3001
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor en http://localhost:${PORT}`);
-});

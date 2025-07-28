@@ -10,7 +10,6 @@ const sequelize = new Sequelize(
     dialect: process.env.DB_DIALECT
   }
 );
-
 sequelize.authenticate()
   .then(() => console.log('✅ Conectado a MySQL'))
   .catch(err => console.error('❌ Error de conexión:', err));
